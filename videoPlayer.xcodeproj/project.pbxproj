@@ -99,8 +99,8 @@
 				TargetAttributes = {
 					CA6C9E071D522F2C002341E2 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 6RE8S7MP65;
-						DevelopmentTeamName = "Code and Theory";
+						DevelopmentTeam = KWV3LMSGNJ;
+						DevelopmentTeamName = "Richard Adem";
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -268,6 +268,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.videoPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -280,6 +281,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.videoPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

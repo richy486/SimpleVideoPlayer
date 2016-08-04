@@ -51,7 +51,7 @@ public class VideoView : UIView {
     
     func playerItemDidReachEnd(_ notification: Notification) {
         delegate?.videoViewVideoDidEnd(self)
-        if let playerItem = notification.object , loop == true {
+        if let playerItem = notification.object  where loop == true {
             playerItem.seek(to: kCMTimeZero)
         }
     }
@@ -78,7 +78,7 @@ public class VideoView : UIView {
                     let pathPrefix = NSURL(fileURLWithPath: urlString).deletingPathExtension?.lastPathComponent
                     
                     
-                    if let u = Bundle.main.url(forResource: pathPrefix, withExtension: pathExtention) {
+                    if let u = Bundle.main().urlForResource(pathPrefix, withExtension: pathExtention) {
                         return u
                     }
                 }
@@ -125,11 +125,11 @@ public class VideoView : UIView {
                 
                 if let player = player, let playerLayer = playerLayer {
                     
-                    NotificationCenter.default.addObserver(self
+                    NotificationCenter.default().addObserver(self
                         , selector: #selector(playerItemDidReachEnd(_:))
                         , name: NSNotification.Name.AVPlayerItemDidPlayToEndTime
                         , object: player.currentItem)
-                    NotificationCenter.default.addObserver(self
+                    NotificationCenter.default().addObserver(self
                         , selector: #selector(willEnterForeground(_:))
                         , name: "ApplicationWillEnterForeground" as NSNotification.Name //GlobalNotification.ApplicationWillEnterForeground.rawValue
                         , object: nil)
@@ -153,13 +153,13 @@ public class VideoView : UIView {
         if let player = player {
             player.pause()
         }
-        NotificationCenter.default.removeObserver(self)
+        NotificationCenter.default().removeObserver(self)
     }
     
     // MARK: Memory management
     
     deinit {
-        NotificationCenter.default.removeObserver(self)
+        NotificationCenter.default().removeObserver(self)
     }
 }
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11185.3" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11151.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,16 +21,25 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thm-kF-k11" customClass="VideoView" customModule="videoPlayer" customModuleProvider="target">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgg-w6-hnB">
+                                <state key="normal" title="Pick Video"/>
+                                <connections>
+                                    <action selector="touchUpIn_pickVideoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TRs-zk-3be"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="kgg-w6-hnB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9QD-V9-7rt"/>
                             <constraint firstItem="thm-kF-k11" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ZAz-II-nZV"/>
                             <constraint firstItem="thm-kF-k11" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aOz-so-mNo"/>
                             <constraint firstAttribute="trailing" secondItem="thm-kF-k11" secondAttribute="trailing" id="cg3-Ag-dJs"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="thm-kF-k11" secondAttribute="bottom" id="dbe-rZ-MBQ"/>
+                            <constraint firstItem="kgg-w6-hnB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pIC-gb-I7T"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="pickViewButton" destination="kgg-w6-hnB" id="Pa1-Kh-bx9"/>
                         <outlet property="videoView" destination="thm-kF-k11" id="eWx-MM-156"/>
                     </connections>
                 </viewController>
